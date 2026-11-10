@@ -1,0 +1,320 @@
+
+/* Professional Browse Jobs Design */
+
+.seeker-jobs-page {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* Page heading */
+
+.seeker-jobs-page .jobs-intro {
+  padding: 12px 0 24px;
+  margin-bottom: 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.seeker-jobs-page .jobs-intro h1 {
+  font-size: clamp(27px, 3vw, 35px);
+  font-weight: 800;
+  letter-spacing: -1.2px;
+}
+
+.seeker-jobs-page .jobs-intro .page-subtitle {
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.seeker-jobs-page .jobs-refresh-note {
+  padding: 9px 14px;
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  background: var(--surface-2);
+  font-size: 11px;
+}
+
+/* Search and filters */
+
+.seeker-jobs-page .jobs-search-panel {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) 190px 210px;
+  gap: 13px;
+  padding: 19px;
+  margin-bottom: 4px;
+  border: 1px solid var(--border);
+  border-radius: 17px;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.seeker-jobs-page .jobs-search-input-wrap {
+  min-width: 0;
+}
+
+.seeker-jobs-page .jobs-search-panel input,
+.seeker-jobs-page .jobs-search-panel select {
+  min-height: 47px;
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  background: var(--surface-2);
+  color: var(--text);
+  font-size: 13px;
+}
+
+.seeker-jobs-page .jobs-search-panel input:focus,
+.seeker-jobs-page .jobs-search-panel select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+/* Section headings */
+
+.seeker-jobs-page .jobs-section-heading {
+  margin: 12px 0 17px;
+  align-items: center;
+}
+
+.seeker-jobs-page .jobs-section-heading h2 {
+  font-size: 21px;
+  font-weight: 750;
+  letter-spacing: -.5px;
+}
+
+.seeker-jobs-page .jobs-section-heading p {
+  margin-top: 6px;
+  font-size: 13px;
+}
+
+.seeker-jobs-page .jobs-section-count {
+  padding: 8px 13px;
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  background: var(--surface-2);
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 650;
+}
+
+/* Job cards */
+
+.seeker-jobs-page .jobs-card-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 19px;
+}
+
+.seeker-jobs-page .jobs-card {
+  padding: 23px;
+  border: 1px solid var(--border);
+  border-radius: 17px;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+  transition: transform .2s ease, border-color .2s ease,
+    box-shadow .2s ease;
+}
+
+.seeker-jobs-page .jobs-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--primary);
+  box-shadow: var(--shadow);
+}
+
+.seeker-jobs-page .jobs-card .job-card-top {
+  align-items: flex-start;
+  min-height: 48px;
+  gap: 12px;
+}
+
+.seeker-jobs-page .jobs-card .job-title {
+  font-size: 16px;
+  font-weight: 750;
+  line-height: 1.45;
+  color: var(--text);
+}
+
+.seeker-jobs-page .jobs-card .job-company {
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.seeker-jobs-page .jobs-card .job-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 17px 0;
+}
+
+.seeker-jobs-page .jobs-card-description {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  min-height: 60px;
+  margin: 12px 0;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.seeker-jobs-page .jobs-card .skill-chip {
+  background: var(--primary-light);
+  color: var(--primary);
+}
+
+.seeker-jobs-page .jobs-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 17px;
+  border-top: 1px solid var(--border);
+}
+
+.seeker-jobs-page .jobs-card-actions {
+  display: flex;
+  gap: 9px;
+}
+
+.seeker-jobs-page .jobs-card-actions .btn {
+  min-height: 36px;
+  border-radius: 9px;
+}
+
+/* Error panels */
+
+.seeker-jobs-page .jobs-error-panel {
+  padding: 15px;
+  border-radius: 12px;
+  background: rgba(220, 92, 112, .08);
+  border: 1px solid rgba(220, 92, 112, .25);
+}
+
+/* Responsive */
+
+@media (max-width: 1050px) {
+  .seeker-jobs-page .jobs-search-panel {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .seeker-jobs-page .jobs-search-input-wrap {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .seeker-jobs-page .jobs-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .seeker-jobs-page .jobs-card {
+    padding: 19px;
+  }
+}
+
+@media (max-width: 520px) {
+  .seeker-jobs-page .jobs-search-panel {
+    grid-template-columns: 1fr;
+    padding: 13px;
+  }
+
+  .seeker-jobs-page .jobs-search-input-wrap {
+    grid-column: auto;
+  }
+
+  .seeker-jobs-page .jobs-intro {
+    align-items: flex-start;
+  }
+
+  .seeker-jobs-page .jobs-refresh-note {
+    display: none;
+  }
+
+  .seeker-jobs-page .jobs-card-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .seeker-jobs-page .jobs-card-actions {
+    width: 100%;
+  }
+
+  .seeker-jobs-page .jobs-card-actions .btn {
+    flex: 1;
+    justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .seeker-jobs-page,
+  .seeker-jobs-page * {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+
+/* Final responsive layout fixes */
+
+.seeker-jobs-page,
+.seeker-jobs-page * {
+  box-sizing: border-box;
+}
+
+.seeker-jobs-page {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: hidden;
+}
+
+.seeker-jobs-page .jobs-card-grid,
+.seeker-jobs-page .grid.grid-3 {
+  display: grid;
+  width: 100%;
+  min-width: 0;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 20px;
+}
+
+.seeker-jobs-page .jobs-card {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.seeker-jobs-page .jobs-card * {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.seeker-jobs-page .jobs-card-description {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media (max-width: 900px) {
+  .seeker-jobs-page .jobs-card-grid,
+  .seeker-jobs-page .grid.grid-3 {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .seeker-jobs-page {
+    gap: 17px;
+  }
+
+  .seeker-jobs-page .jobs-card {
+    padding: 16px;
+  }
+}
